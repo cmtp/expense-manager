@@ -1,0 +1,7 @@
+node_modules
+package.json
+.angulardoc.json
+settings.json
+package-lock.json
+tsconfig.json
+tslint.json
