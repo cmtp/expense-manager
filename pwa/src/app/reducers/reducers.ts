@@ -11,10 +11,10 @@ import { RouterStateUrl } from "../shared/utils";
 import * as fromRouter from "@ngrx/router-store";
 import { storeFreeze } from "ngrx-store-freeze";
 
-import * as fromAuth from "../../auth/reducers/auth.reducer";
+import * as fromAuth from "../auth/Reducers/auth.reducer";
 
 export interface State {
-  auth: fromAuth.state;
+  auth: fromAuth.State;
   router: fromRouter.RouterReducerState<RouterStateUrl>;
 }
 

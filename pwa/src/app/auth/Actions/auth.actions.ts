@@ -4,12 +4,12 @@ export enum AuthActionTypes {
   LoggedUser = "[Auth] LOGGED_USER",
   LoginUser = "[Auth] LOGIN_USER",
   LoginUserError = "[Auth] LOGIN_USER_ERROR",
-  LoggednIn = "[Auth] LOGGED_IN",
+  LoggedIn = "[Auth] LOGGED_IN",
   LogoutUser = "[Auth] LOGOUT_USER"
 }
 
 export class LoggedIn implements Action {
-  readonly type: AuthActionTypes.LoggednIn;
+  readonly type: AuthActionTypes.LoggedIn;
 
   constructor(public payload: { isLogin: boolean }) {}
 }

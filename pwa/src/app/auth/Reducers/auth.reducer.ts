@@ -19,12 +19,17 @@ export function AuthReducer(state = [], action: AuthActions.actions) {
   switch (action.type) {
     case AuthActionTypes.LoginUser:
       return action;
-      break;
     case AuthActionTypes.LoggedUser:
       return {
         ...state,
         isLoading: false,
         token: action.payload
       };
+    default:
+      return state;
   }
 }
+
+export const getAuthState = (state: State) => state.user;
+export const getAuthAction = (action: any) => action.payload;
+export const getAuthError = (state: State) => state.error;

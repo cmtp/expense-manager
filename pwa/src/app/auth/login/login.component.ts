@@ -9,14 +9,32 @@ import { AuthService } from "../service/auth.service";
 })
 export class LoginComponent implements OnInit {
   user: IUser;
+  loginProcess: boolean;
+  error: boolean = false;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) {
+    this.loginProcess = false;
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.user = {
+      username: "christiantola",
+      email: "christian@example.com",
+      password: "christiantola"
+    };
+  }
 
   login() {
-    this.authService.login(this.user).subscribe(response => {
-      console.log(response);
-    });
+    this.loginProcess = true;
+    this.authService.login(this.user).subscribe(
+      response => {
+        console.log(response);
+        this.loginProcess = false;
+      },
+      err => {
+        console.log("err", err);
+        this.loginProcess = false;
+      }
+    );
   }
 }
