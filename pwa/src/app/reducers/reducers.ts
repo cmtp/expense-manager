@@ -41,3 +41,13 @@ export const getAuth = createSelector(
   getAuthState,
   fromAuth.getAuthState
 );
+
+export const getAuthLoading = createSelector(
+  getAuthState,
+  fromAuth.getAuthLoading
+);
+
+export const getAuthError = createSelector(
+  getAuthState,
+  fromAuth.getAuthError
+);

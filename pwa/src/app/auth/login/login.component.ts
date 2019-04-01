@@ -1,8 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { IUser } from "src/app/interfaces/IUser";
+import { IUser } from "../../interfaces/IUser";
 
 import { Store, select } from "@ngrx/store";
-import * as Auth from "../Actions/auth.actions";
+
+import * as fromAuth from "../../reducers/reducers";
+import * as Auth from "../actions/auth.actions";
 
 @Component({
   selector: "exp-login",
@@ -11,10 +13,10 @@ import * as Auth from "../Actions/auth.actions";
 })
 export class LoginComponent implements OnInit {
   user: IUser;
-  error$ = this.store.select(state => state.auth.error);
-  isLoading$ = this.store.select(state => state.auth.isLoading);
+  error$ = this.store.select(fromAuth.getAuthError);
+  isLoading$ = this.store.select(fromAuth.getAuthLoading);
 
-  constructor(private store: Store<any>) {}
+  constructor(private store: Store<fromAuth.State>) {}
 
   ngOnInit() {
     this.user = {
