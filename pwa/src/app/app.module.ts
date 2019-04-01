@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { SharedModule } from "./shared/shared.module";
+import { FormsModule } from "@angular/forms";
 
 // ngrx modules
 import { StoreModule } from "@ngrx/store";
@@ -20,13 +21,20 @@ const NGRX_IMPORTS = [
   EffectsModule.forRoot([]),
   StoreDevtoolsModule.instrument({
     name: "Angular Chat NGRX",
-    logOnly: environment.production
+    logOnly: environment.production,
+    maxAge: 25
   })
 ];
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, ...NGRX_IMPORTS],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    SharedModule,
+    ...NGRX_IMPORTS
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
