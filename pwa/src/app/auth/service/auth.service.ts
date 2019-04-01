@@ -23,8 +23,6 @@ export class AuthService {
       error: true,
       ...user
     };
-    console.error(user.user);
-    console.error(this.userFake);
     if (JSON.stringify(user.user) === JSON.stringify(this.userFake)) {
       toSend = {
         isLoading: false,
