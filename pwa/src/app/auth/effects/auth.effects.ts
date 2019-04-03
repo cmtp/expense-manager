@@ -11,7 +11,7 @@ import {
   LoginUser,
   LogoutUser,
   LoginUserError
-} from "../Actions/auth.actions";
+} from "../actions/auth.actions";
 import { AuthService } from "../service/auth.service";
 import { Router } from "@angular/router";
 
