@@ -73,3 +73,20 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
   Nest is [MIT licensed](LICENSE).
+
+## Database
+
+create an *ormconfig.json* file in root of project with this content:
+
+```json
+{
+  "type": "mssql",
+  "host": "localhost",
+  "port": 1433,
+  "username": "your_username",
+  "password": "your_password",
+  "database": "expenses",
+  "entities": ["src/**/*.entity{.ts,.js}"],
+  "synchronize": true
+}
+```
